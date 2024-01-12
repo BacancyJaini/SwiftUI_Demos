@@ -7,22 +7,54 @@
 
 import SwiftUI
 
-class ViewModel: ObservableObject {
-    @Published var abc = ""
-}
-
 struct ContentView: View {
-    @AppStorage("name") var uname = ""
-    @State var ex = Color.white
-    @StateObject var viewModel = ViewModel()
-    @ObservedObject var abcd = ViewModel()
-    var data = ["", ""]
+    @AppStorage("name") var currentUserName: String?
+    @State private var username: String = ""
+    @State private var selectedColor = "Blue"
+    @State private var showSheet = false
+    
     var body: some View {
-        ZStack(content: {
-            Color.red
-            kajd(ex: $ex)
-        })
-        .ignoresSafeArea()
+        NavigationView() {
+            VStack(spacing: 20) {
+                TextField("Enter Username: ", text: $username)
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                Text("Hi --- \(username)")
+                Text("Stored Name: \(currentUserName ?? "No name available")")
+                Button {
+                    currentUserName = "Nick"
+                } label: {
+                    Text("Save".uppercased())
+                }
+
+                // Color Picker View
+                ColorPickerSubView(selectedColor: $selectedColor)
+                    .padding()
+                Text("Selected color: \(selectedColor)")
+                    .font(.title)
+                
+                Button {
+                    showSheet.toggle()
+                } label: {
+                    Text("Button")
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                }
+                .sheet(isPresented: $showSheet, content: {
+                    ColorPickerSubView(selectedColor: $selectedColor)
+                })
+                
+                NavigationLink {
+                    ColorPickerView(selectedColor: $selectedColor)
+                } label: {
+                    Text("NewButton")
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(10)
+                }
+            }
+        }
     }
     
     /// something something
@@ -32,10 +64,31 @@ struct ContentView: View {
     }
 }
 
-struct kajd: View {
-    @Binding var ex: Color
+//struct dummyModel: Identifiable {
+//    var id: String = UUID().uuidString
+//    let name: String
+//}
+
+struct ColorPickerSubView: View {
+    // MARK: - Binding Property
+    @Binding var selectedColor: String
+    
+   // let model: [dummyModel] = [dummyModel(name: "ja"), dummyModel(name: "ajhs"), dummyModel(name: "sdh")]
+    
+    // Available colors for selection
+    let colors = ["Red", "Green", "Blue", "Yellow", "Purple"]
+
     var body: some View {
-        Text("ksdjh")
+        // Picker View for color selection
+        Picker("Select a color", selection: $selectedColor) {
+//            ForEach(model) { _ in
+//                
+//            }
+            ForEach(colors, id: \.self) { color in
+                Text(color)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
     }
 }
 

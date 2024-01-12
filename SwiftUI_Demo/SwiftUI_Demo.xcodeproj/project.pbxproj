@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA095542B4FC9F200186C4F /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA095532B4FC9F200186C4F /* ColorPickerView.swift */; };
+		CEA095562B4FE47E00186C4F /* EnvironmentDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA095552B4FE47E00186C4F /* EnvironmentDemoView.swift */; };
+		CEA0955D2B4FFADD00186C4F /* FruitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0955C2B4FFADD00186C4F /* FruitView.swift */; };
+		CEA0955F2B4FFAEB00186C4F /* FruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0955E2B4FFAEB00186C4F /* FruitViewModel.swift */; };
 		CEA5C6492B305886007CABFD /* SwiftUI_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5C6482B305886007CABFD /* SwiftUI_DemoApp.swift */; };
 		CEA5C64B2B305886007CABFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5C64A2B305886007CABFD /* ContentView.swift */; };
 		CEA5C64D2B30588A007CABFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA5C64C2B30588A007CABFD /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEA095532B4FC9F200186C4F /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		CEA095552B4FE47E00186C4F /* EnvironmentDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentDemoView.swift; sourceTree = "<group>"; };
+		CEA0955C2B4FFADD00186C4F /* FruitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitView.swift; sourceTree = "<group>"; };
+		CEA0955E2B4FFAEB00186C4F /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
 		CEA5C6452B305886007CABFD /* SwiftUI_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA5C6482B305886007CABFD /* SwiftUI_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_DemoApp.swift; sourceTree = "<group>"; };
 		CEA5C64A2B305886007CABFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEA095602B4FFAEF00186C4F /* Fruits */ = {
+			isa = PBXGroup;
+			children = (
+				CEA0955C2B4FFADD00186C4F /* FruitView.swift */,
+				CEA0955E2B4FFAEB00186C4F /* FruitViewModel.swift */,
+			);
+			path = Fruits;
+			sourceTree = "<group>";
+		};
 		CEA5C63C2B305886007CABFD = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +113,9 @@
 			children = (
 				CEA5C6482B305886007CABFD /* SwiftUI_DemoApp.swift */,
 				CEA5C64A2B305886007CABFD /* ContentView.swift */,
+				CEA095552B4FE47E00186C4F /* EnvironmentDemoView.swift */,
+				CEA095532B4FC9F200186C4F /* ColorPickerView.swift */,
+				CEA095602B4FFAEF00186C4F /* Fruits */,
 				CEA5C64C2B30588A007CABFD /* Assets.xcassets */,
 				CEA5C64E2B30588A007CABFD /* Preview Content */,
 			);
@@ -258,7 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA5C64B2B305886007CABFD /* ContentView.swift in Sources */,
+				CEA0955F2B4FFAEB00186C4F /* FruitViewModel.swift in Sources */,
+				CEA095562B4FE47E00186C4F /* EnvironmentDemoView.swift in Sources */,
 				CEA5C6492B305886007CABFD /* SwiftUI_DemoApp.swift in Sources */,
+				CEA0955D2B4FFADD00186C4F /* FruitView.swift in Sources */,
+				CEA095542B4FC9F200186C4F /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
